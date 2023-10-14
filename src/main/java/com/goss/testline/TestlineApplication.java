@@ -8,6 +8,7 @@ public class TestlineApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestlineApplication.class, args);
+		System.out.println("阿森唧唧臭");
 	}
 
 }
