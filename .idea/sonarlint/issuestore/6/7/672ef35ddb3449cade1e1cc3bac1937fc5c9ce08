@@ -1,0 +1,10 @@
+
+‹
+java:S1319"iThe type of "visitedLinks" should be an interface such as "Set" rather than the implementation "HashSet".(Ú±Ëûıÿÿÿÿ8Ù â¥»1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ú±Ëûıÿÿÿÿ8Óóë¥»1
+G	java:S1060"+Replace this use of System.out by a logger.(¤ÌÄ8Öóë¥»1
+G	java:S1061"+Replace this use of System.out by a logger.(¤“¸©8ÓÃ•§»1
+G	java:S1069"+Replace this use of System.out by a logger.(“ãş‰8ÔÃ•§»1
+L	java:S106:"+Replace this use of System.out by a logger.(«·· ûÿÿÿÿ8àí™§»1
+L	java:S106D"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8áí™§»1

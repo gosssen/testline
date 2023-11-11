@@ -1,0 +1,7 @@
+
+i
+java:S2259;"GA "NullPointerException" could be thrown; "groupList" is nullable here.(ΣΚΥπϋÿÿÿÿ8ΉΜΠε»1
+L	java:S1061"+Replace this use of System.out by a logger.(οκϋ•ύÿÿÿÿ8ΏΜΠε»1
+L	java:S1063"+Replace this use of System.out by a logger.(Ί»ψÿÿÿÿ8ΑΜΠε»1
+t
+java:S3776G"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(δΛ“¶ÿÿÿÿÿ8ÒΜΠε»1

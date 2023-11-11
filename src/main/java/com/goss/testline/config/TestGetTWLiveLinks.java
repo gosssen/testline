@@ -1,4 +1,4 @@
-package com.goss.testline;
+package com.goss.testline.config;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

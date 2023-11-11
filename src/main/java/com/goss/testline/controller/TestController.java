@@ -1,29 +1,27 @@
 package com.goss.testline.controller;
 
-import com.linecorp.bot.messaging.model.TextMessage;
-import com.linecorp.bot.model.PushMessage;
-import com.linecorp.bot.model.message.Message;
-
-import com.linecorp.bot.client.LineMessagingClient;
-import com.linecorp.bot.spring.boot.handler.annotation.EventMapping;
-import com.linecorp.bot.spring.boot.handler.annotation.LineMessageHandler;
-import com.linecorp.bot.webhook.model.MessageEvent;
-import com.linecorp.bot.webhook.model.TextMessageContent;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.goss.testline.user.UserInfoService;
+import com.linecorp.bot.model.event.MessageEvent;
+import com.linecorp.bot.model.event.message.TextMessageContent;
+import com.linecorp.bot.model.message.TextMessage;
+import com.linecorp.bot.spring.boot.annotation.EventMapping;
+import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
+import lombok.RequiredArgsConstructor;
 
 @LineMessageHandler
+@RequiredArgsConstructor
 public class TestController {
 
+  private final UserInfoService userInfoService;
 
-
-    @EventMapping
-    public TextMessage test(MessageEvent messageEvent) {
-        var message = (TextMessageContent) messageEvent.message();
-        System.out.println(messageEvent.source().userId());
-        System.out.println(message.text());
-        return new TextMessage("13");
-    }
+  @EventMapping
+  public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
+    String userId = event.getSource().getUserId();
+    String localName = event.getMessage().getText();
+    var userByLineId = userInfoService.findUserByLineId(userId);
+    String returnMessage = userByLineId.map(user -> userInfoService.processQuestion(user, localName))
+        .orElseGet(() -> userInfoService.processFirstQuestion(userId, localName));
+    return new TextMessage(returnMessage);
+  }
 
 }
