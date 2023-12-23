@@ -1,5 +1,6 @@
 package com.goss.testline;
 
+import com.goss.testline.config.LoadData;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,7 +11,9 @@ public class TestlineApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext run = SpringApplication.run(TestlineApplication.class, args);
 //		InitData bean = run.getBean(InitData.class);
-//		bean.recursiveCrawl("https://tw.live/");
+//		bean.recursiveCrawl("https://tw.live/");;
+		LoadData bean = run.getBean(LoadData.class);
+		bean.checkAndRun("https://tw.live/");
 	}
 
 }

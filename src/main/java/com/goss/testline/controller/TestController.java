@@ -8,7 +8,7 @@ import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 import lombok.RequiredArgsConstructor;
 
-@LineMessageHandler
+//@LineMessageHandler
 @RequiredArgsConstructor
 public class TestController {
 
